@@ -1,4 +1,4 @@
-﻿#if !NETSTANDARD
+﻿#if !NETSTANDARD && !NET8_0
 
 using System;
 using System.Drawing;

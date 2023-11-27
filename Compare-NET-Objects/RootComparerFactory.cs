@@ -50,8 +50,12 @@ namespace KellermanSoftware.CompareNetObjects
 
             _rootComparer.TypeComparers.Add(new RuntimeTypeComparer(_rootComparer));
 
-#if !NETSTANDARD
+#if !NETSTANDARD && !NET8_0
             _rootComparer.TypeComparers.Add(new FontComparer(_rootComparer));
+#endif
+
+#if !NETSTANDARD
+
             _rootComparer.TypeComparers.Add(new DatasetComparer(_rootComparer));
             _rootComparer.TypeComparers.Add(new DataTableComparer(_rootComparer));
             _rootComparer.TypeComparers.Add(new DataRowComparer(_rootComparer));
@@ -70,12 +74,12 @@ namespace KellermanSoftware.CompareNetObjects
             _rootComparer.TypeComparers.Add(new DateTimeOffSetComparer(_rootComparer));
             _rootComparer.TypeComparers.Add(new TimespanComparer(_rootComparer));
             _rootComparer.TypeComparers.Add(new EnumComparer(_rootComparer));
-            
+
 #if NET6_0_OR_GREATER
             _rootComparer.TypeComparers.Add(new DateOnlyComparer(_rootComparer));
             _rootComparer.TypeComparers.Add(new TimeOnlyComparer(_rootComparer));
 #endif
-            
+
             _rootComparer.TypeComparers.Add(new StructComparer(_rootComparer));
 
             return _rootComparer;

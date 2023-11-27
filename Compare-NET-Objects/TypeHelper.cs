@@ -534,6 +534,9 @@ namespace KellermanSoftware.CompareNetObjects
 
             return type == typeof(DataColumn);
         }
+#endif
+
+#if !NETSTANDARD && !NET8_0
 
         /// <summary>
         /// Returns true if the type is a font
@@ -546,6 +549,7 @@ namespace KellermanSoftware.CompareNetObjects
 
             return type == typeof(Font);
         }
+
 #endif
 
 #if !NETSTANDARD

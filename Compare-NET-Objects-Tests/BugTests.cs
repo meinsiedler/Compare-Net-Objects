@@ -1010,7 +1010,7 @@ namespace KellermanSoftware.CompareNetObjectsTests
             _compare.Config.AttributesToIgnore.Clear();
         }
 
-#if !NETSTANDARD
+#if !NETSTANDARD && !NET8_0
 
         [Test]
         public void LinearGradient()
